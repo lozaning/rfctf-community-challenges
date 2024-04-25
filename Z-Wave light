@@ -1,0 +1,14 @@
+Challenge Name: Turn on the Light
+
+Hardware required to run the challenge: A smarthome controller/hub with a zwave radio, and two z-wave light bulbs (I can give you all of these)
+
+Flags: Players will be given a flag to enter into the scoreboard after demonstrating that they can turn on a z-wave connected smart light
+
+
+Software Setup: There is an automation running on the smart home hub/controller that switches one of the lights on and off every 15 minutes. The other light is connected to the hub/controller as well, but no automations are configured for it. It is this light that players must demonstrate their ability to turn on. 
+
+Flag Rolling procedure: I think if you tear down and reset up a z-wave network using Home Assistant, you'll end up with a different Home-ID, which would require players to recraft the appropriate packet they send to control the light
+
+potential methodologies to capture the flags:
+Player might try using a z-wave dongle flashed with firmware to enable monitor mode, and then anylyze the information observed in the commands sent to the bulb configured with the on/off automation
+Player then might examine the variuous z-wave command types and then manually craft and send a packet that would result in the un-automated light turning on.
